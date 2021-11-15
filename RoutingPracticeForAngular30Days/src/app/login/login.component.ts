@@ -8,7 +8,8 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) {}
+
 
   ngOnInit(): void {
   }
@@ -26,7 +27,8 @@ export class LoginComponent implements OnInit {
         name: 'Leo'
       }
     });
-
   }
+
+
 
 }

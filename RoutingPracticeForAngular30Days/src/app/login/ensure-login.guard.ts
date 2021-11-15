@@ -26,7 +26,11 @@ export class EnsureLoginGuard implements CanDeactivate<LoginComponent> {
     currentState: RouterStateSnapshot,
     nextState?: RouterStateSnapshot
   ): boolean | Observable<boolean> | Promise<boolean> {
-    return confirm('是否要離開此頁面?');
+
+    if (component.name.trim()) { //如果有輸入內容
+      return confirm('是否要離開此頁面?');
+    }
+    return true;
   }
 
 }

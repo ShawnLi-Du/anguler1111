@@ -14,7 +14,7 @@ const routes: Routes = [
   {
     path: '',
     component: LayoutComponent,
-    canActivate: [LayoutGuard],
+    canActivate: [LayoutGuard], //跳到layout.guard.ts, 判斷是否能登入
     children: [
       {
         path: 'home',
@@ -29,7 +29,7 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
-    canDeactivate: [EnsureLoginGuard]
+    canDeactivate: [EnsureLoginGuard] //如果要離開頁面,判斷
   },
   // Angular 8+
   {
@@ -45,8 +45,9 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, {
+    // enableTracing: true
     useHash: true,
-    preloadingStrategy: PreloadAllModules
+    preloadingStrategy: PreloadAllModules  //啟用預先載入
   })],
   exports: [RouterModule],
   providers: []
