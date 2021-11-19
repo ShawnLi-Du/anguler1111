@@ -1,0 +1,81 @@
+
+/**/
+.sidenav-container {
+  height: 100%;
+}
+
+/*右下選單版面*/
+.sidenav {
+  padding-top: 30px;
+  width: 200px;
+  position: fixed;
+  top: 60px;
+  left: 0;
+  background-color: #E0E0E0;
+}
+/*右邊的sidenav*/
+.sidenavRight {
+  width: 250px;
+  position: fixed;
+  top: 64px;
+}
+/*標頭toolbar*/
+.header-toolbar {
+  height: 60px;
+  padding: 0 16px 0 0;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 10;
+  background-color: #04AA6D
+
+}
+/*選單toolbar*/
+.menu-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.mat-drawer-content.mat-sidenav-content {
+  margin-top: 100px /*因為固定了最上面的toolbar，所以讓contonet內容往下移*/
+
+}
+
+/*分隔toolbar內的空間*/
+.toolbar-seprator {
+  flex: 1 1 auto;
+
+}
+/*list底線*/
+.l-sub-section {
+  color: #333;
+  background-color: #e2effb;
+  padding: 3px;
+  margin-bottom: 8px;
+  display: table;
+  clear: both;
+  width: 100%;
+  box-sizing: border-box;
+}
+/*左選單按鈕*/
+.leftMenuClass{
+  margin-left: 15px;
+}
+
+.mat-sidenav-containerClass{
+  padding-top: 100px;
+}
+
+.rightButtonClass{
+margin-left: 10px;
+}
+
+.mat-listClass{
+  align-content: center;
+}
+
+.mat-iconClass{
+  background-color: #04AA6D;
+}

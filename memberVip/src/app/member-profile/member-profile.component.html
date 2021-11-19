@@ -1,0 +1,76 @@
+<mat-toolbar color="warn" class="header-toolbar">
+
+  <button class='leftMenuClass mat-iconClass' type="button" aria-label="Toggle sidenav" mat-icon-button
+    (click)="toggleSideNav(drawer)">
+    <mat-icon  class="mat-iconClass" aria-label="Side nav toggle icon">menu</mat-icon>
+  </button>
+
+  <span class="toolbar-seprator"></span>
+
+  <span>{{programName}}</span>
+  <button class="rightButtonClass mat-iconClass" mat-icon-button (click)="toggleSideNav(drawerRight)"> <!--右邊選單按鈕-->
+    <mat-icon class="mat-iconClass">face</mat-icon>
+  </button>
+
+  <button class="mat-iconClass" mat-icon-button (click)="toSignOut()">
+    <mat-icon class="mat-iconClass">logout</mat-icon>
+  </button>
+
+</mat-toolbar>
+<mat-sidenav-container  fixedInViewport="true">
+  <mat-sidenav class="mat-sidenavClass" #drawer position="start" mode="side" class="sidenav" opened>
+    <!-- <mat-toolbar color="primary"> -->
+      <!-- <span>Menu</span> -->
+      <!-- <span><mat-icon>verified_user</mat-icon></span> -->
+    <!-- </mat-toolbar> -->
+    <mat-nav-list>
+      <a mat-list-item routerLink="/memberProfile">選單一</a>
+      <a mat-list-item routerLink="/memberProfile">選單二</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+<mat-sidenav-container fixedInViewport="true">
+  <mat-sidenav #drawerRight position="end" mode="side" class="sidenavRight">
+    <mat-toolbar color="primary">
+      <span>
+        <mat-icon>folder_shared</mat-icon>
+      </span>
+      <span>基本資料</span>
+
+    </mat-toolbar>
+
+    <mat-list class="mat-listClass">
+
+      <mat-list-item class="l-sub-section">
+        <mat-icon>format_list_numbered</mat-icon>
+        {{no}}
+      </mat-list-item>
+      <mat-list-item class="l-sub-section">
+        <mat-icon>person</mat-icon>
+        {{email}}}
+      </mat-list-item>
+
+      <mat-list-item class="l-sub-section">
+        <mat-icon>forward_to_inbox</mat-icon>
+        {{email}}}
+      </mat-list-item>
+
+    </mat-list>
+  </mat-sidenav>
+</mat-sidenav-container>
+
+
+
+<!-- <br><br>
+no :&nbsp;&nbsp;&nbsp;{{no}}<br>
+email :&nbsp;&nbsp;&nbsp;{{email}}<br>
+password :&nbsp;&nbsp;&nbsp;{{password}}<br>
+
+<div class="ButtonClass">
+  <div class="registerClass"><button  type="button" routerLink='/input'>登入</button></div>
+  <div class="RetrievePasswordClass"><button type="button" routerLink='/findPassword'>忘記密碼</button></div>
+</div> -->

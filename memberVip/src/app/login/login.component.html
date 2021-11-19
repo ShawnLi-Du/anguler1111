@@ -1,0 +1,20 @@
+<form method="post">
+  <div class="container">
+    <div class="titleClass">
+      <h1>{{title}}</h1>
+    </div>
+    <div>
+      <label for="email"><b class="bClass">Email</b></label>
+      <input type="text" [formControl]="account">
+    </div>
+    <div>
+      <label for="password"><b class="bClass">Password</b></label>
+      <input type="password" [formControl]="password">
+    </div>
+    <button type="button" (click)="doLogin()">Login</button>
+  </div>
+</form>
+<div class="ButtonClass">
+  <div class="registerClass"><button type="button" routerLink='/register'>註冊</button></div>
+  <div class="RetrievePasswordClass"><button type="button" routerLink='/findPassword'>忘記密碼</button></div>
+</div>
