@@ -1,22 +1,44 @@
 <form method="post">
-  <div class="container">
-    <div class="titleClass">
-      <h1>{{titleRegister}}</h1>
+    <div class="container">
+
+        <div class="titleClass">
+            {{titleRegister}}
+        </div>
+
+        <!--photo-->
+        <img class="imgClass" height="150px" width="150px" [src]="sd.bypassSecurityTrustUrl(imgsrc)">
+        <!-- <input class="inputImpClass" type="file" id="imgData" (change)="fileChange($event)"> -->
+        <input class="inputImpClass" type="file" name="file" id="file" (change)="changed($event)">
+
+        <div>
+            <a *ngIf="!stateNameColor; else notStateNameColor"><label for="name"><b class="bClass">Name</b><a class="aClass">&nbsp;&nbsp;{{nameState}}</a></label>
+            </a>
+            <ng-template #notStateNameColor>
+                <label for="name"><b class="bClass">Name</b><a class="aClassOK">&nbsp;&nbsp;{{nameState}}</a></label>
+            </ng-template>
+            <input type="text" [formControl]="name" (blur)="getNameVerify()">
+        </div>
+        <!--email-->
+        <div>
+            <a *ngIf="!stateMailColor; else notStateMailColor"><label for="email"><b class="bClass">Email</b><a class="aClass">&nbsp;&nbsp;{{emailState}}</a></label>
+            </a>
+            <ng-template #notStateMailColor>
+                <label for="email"><b class="bClass">Email</b><a class="aClassOK">&nbsp;&nbsp;{{emailState}}</a></label>
+            </ng-template>
+            <input type="text" [formControl]="email" (blur)="getEmailVerify()">
+        </div>
+        <!--password-->
+        <div>
+            <label for="password"><b class="bClass">Password</b><a class="aClass">&nbsp;&nbsp;{{psswordSrror}}</a></label>
+            <input type="password" [formControl]="password">
+        </div>
+
+        <button type="button" (click)="getRegister()">註冊</button>
+
     </div>
-    <div>
-      <label for="email"><b class="bClass">Email</b>&nbsp;&nbsp;{{emailState}}
-      </label>
-      <input type="text" [formControl]="email" (blur)="getEmailVerify()">
-    </div>
-    <div>
-      <label for="password"><b class="bClass">Password</b>&nbsp;&nbsp;{{psswordSrror}}
-      </label>
-      <input type="password" [formControl]="password">
-    </div>
-    <button type="button" (click)="getRegister()">註冊</button>
-  </div>
 </form>
+
 <div class="ButtonClass">
-  <div class="registerClass"><button type="button" routerLink='/input'>登入</button></div>
-  <div class="RetrievePasswordClass"><button type="button" routerLink='/findPassword'>忘記密碼</button></div>
+    <div class="registerClass"><button type="button" routerLink='/input'>登入</button></div>
+    <div class="RetrievePasswordClass"><button type="button" routerLink='/findPassword'>忘記密碼</button></div>
 </div>

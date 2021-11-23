@@ -1,76 +1,71 @@
-<mat-toolbar color="warn" class="header-toolbar">
+<!--如果登入狀態為true, 帶入參數-->
 
-  <button class='leftMenuClass mat-iconClass' type="button" aria-label="Toggle sidenav" mat-icon-button
-    (click)="toggleSideNav(drawer)">
-    <mat-icon  class="mat-iconClass" aria-label="Side nav toggle icon">menu</mat-icon>
-  </button>
+<body *ngIf="LoginStatus">
 
-  <span class="toolbar-seprator"></span>
+    <mat-toolbar color="warn" class="header-toolbar">
 
-  <span>{{programName}}</span>
-  <button class="rightButtonClass mat-iconClass" mat-icon-button (click)="toggleSideNav(drawerRight)"> <!--右邊選單按鈕-->
-    <mat-icon class="mat-iconClass">face</mat-icon>
-  </button>
+        <button class='leftMenuClass mat-iconClass' type="button" aria-label="Toggle sidenav" mat-icon-button (click)="toggleSideNav(drawer)">
+      <mat-icon class="mat-iconClass" aria-label="Side nav toggle icon">menu</mat-icon>
+    </button>
 
-  <button class="mat-iconClass" mat-icon-button (click)="toSignOut()">
-    <mat-icon class="mat-iconClass">logout</mat-icon>
-  </button>
+        <span class="toolbar-seprator"></span>
 
-</mat-toolbar>
-<mat-sidenav-container  fixedInViewport="true">
-  <mat-sidenav class="mat-sidenavClass" #drawer position="start" mode="side" class="sidenav" opened>
-    <!-- <mat-toolbar color="primary"> -->
-      <!-- <span>Menu</span> -->
-      <!-- <span><mat-icon>verified_user</mat-icon></span> -->
-    <!-- </mat-toolbar> -->
-    <mat-nav-list>
-      <a mat-list-item routerLink="/memberProfile">選單一</a>
-      <a mat-list-item routerLink="/memberProfile">選單二</a>
-    </mat-nav-list>
-  </mat-sidenav>
-  <mat-sidenav-content>
-    <router-outlet></router-outlet>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+        <a class="aClass"><span>{{programName}}</span></a>
+        <button class="rightButtonClass mat-iconClass" mat-icon-button (click)="toggleSideNav(drawerRight)">
+      <!--右邊選單按鈕-->
+      <!-- <mat-icon class="mat-iconClass">face</mat-icon> -->
+      <img class="imgClass" height="30px" width="30px" src={{impData}}>
+    </button>
 
-<mat-sidenav-container fixedInViewport="true">
-  <mat-sidenav #drawerRight position="end" mode="side" class="sidenavRight">
-    <mat-toolbar color="primary">
-      <span>
-        <mat-icon>folder_shared</mat-icon>
-      </span>
-      <span>基本資料</span>
+        <button class="mat-iconClass" mat-icon-button (click)="toSignOut()">
+      <mat-icon class="mat-iconClass">logout</mat-icon>
+    </button>
 
     </mat-toolbar>
+    <mat-sidenav-container class="mat-sidenav-containerClass" fixedInViewport="true">
+        <mat-sidenav class="mat-sidenavClass" #drawer position="start" mode="side" class="sidenav" opened>
 
-    <mat-list class="mat-listClass">
+            <mat-nav-list class="mat-nav-listClass">
+                <div><a class="aFontClass" mat-list-item routerLink="/memberProfile">選單一</a></div>
+                <div><a class="aFontClass" mat-list-item routerLink="/memberProfile">選單二</a></div>
+            </mat-nav-list>
 
-      <mat-list-item class="l-sub-section">
-        <mat-icon>format_list_numbered</mat-icon>
-        {{no}}
-      </mat-list-item>
-      <mat-list-item class="l-sub-section">
-        <mat-icon>person</mat-icon>
-        {{email}}}
-      </mat-list-item>
+        </mat-sidenav>
+        <mat-sidenav-content>
+            <router-outlet></router-outlet>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
 
-      <mat-list-item class="l-sub-section">
-        <mat-icon>forward_to_inbox</mat-icon>
-        {{email}}}
-      </mat-list-item>
+    <!-- <mat-sidenav-container fixedInViewport="true"> -->
+    <mat-sidenav #drawerRight position="end" mode="side" class="sidenavRight">
 
-    </mat-list>
-  </mat-sidenav>
-</mat-sidenav-container>
+        <!-- <mat-list class="mat-listClass"> -->
+        <div class="vipDataList">
+            <div class="l-sub-section vipHead">
+                <div class="memberData">
+                    <img class="imgClass" height="80px" width="80px" src={{impData}}>
+                </div>
+            </div>
 
+            <!-- <mat-list class="mat-listClass"> -->
+            <div class="spaceClass"></div>
+            <div class="l-sub-section">
+                <div class="mat-iconClass mat-iconC">
+                    <mat-icon>person</mat-icon>
+                </div>
+                <div class="noClass">{{programName}}</div>
+            </div>
 
+            <div class="l-sub-section">
+                <div class="mat-iconClass mat-iconC">
+                    <mat-icon>forward_to_inbox</mat-icon>
+                </div>
+                <div class="noClass">{{email}}</div>
+            </div>
+        </div>
+        <!-- </mat-list> -->
 
-<!-- <br><br>
-no :&nbsp;&nbsp;&nbsp;{{no}}<br>
-email :&nbsp;&nbsp;&nbsp;{{email}}<br>
-password :&nbsp;&nbsp;&nbsp;{{password}}<br>
+    </mat-sidenav>
+    <!-- </mat-sidenav-container> -->
 
-<div class="ButtonClass">
-  <div class="registerClass"><button  type="button" routerLink='/input'>登入</button></div>
-  <div class="RetrievePasswordClass"><button type="button" routerLink='/findPassword'>忘記密碼</button></div>
-</div> -->
+</body>

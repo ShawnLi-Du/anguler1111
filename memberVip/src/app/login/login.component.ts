@@ -12,10 +12,18 @@ export class LoginComponent implements OnInit {
   account = new FormControl('', [Validators.required]);
   password = new FormControl('', [Validators.required]);
   posts: any;
+  LoginStatus: any; //登入狀態'true' of 'false'
+
   constructor(private httpService: HttpService) {
   }
 
   ngOnInit(): void {
+    this.LoginStatus = sessionStorage.getItem('login'); //取得登入狀態
+    // if (sessionStorage.getItem('login') == 'true') { //如果登入狀態為true
+    //   window.location.assign('memberProfile');
+    // } else {
+      // window.location.assign('login');
+    // }
   }
 
   doLogin() {
@@ -29,9 +37,14 @@ export class LoginComponent implements OnInit {
             alert('email 或 password 輸入錯誤');
           } else {
             sessionStorage.setItem('loginNo', response.no);
+            sessionStorage.setItem('loginImgData', response.img);
+            sessionStorage.setItem('loginName', response.name);
             sessionStorage.setItem('loginEmail', response.email);
             sessionStorage.setItem('loginPassword', response.password);
-            window.location.assign('http://localhost:52057/#/memberProfile');
+
+            sessionStorage.setItem('login', 'true'); //登入成功
+            console.log(sessionStorage.getItem('loginNo'));
+            window.location.assign('http://localhost:4200/#/memberProfile');
           }
         });
     }

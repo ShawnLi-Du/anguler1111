@@ -1,81 +1,190 @@
+body {
+    background-image: url('https://images.pexels.com/photos/1131458/pexels-photo-1131458.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260');
+    /*先給你想要放在背景的圖片路徑或網址*/
+    background-repeat: no-repeat;
+    /*背景圖片不要重覆顯示（僅顯示一次）*/
+    background-attachment: fixed;
+    /*背景圖片位置固定*/
+    background-position: center;
+    /*背景圖片水平位置與垂直位置均置中對齊*/
+}
+
+body.mat-typography {
+    background-color: rgb(42, 61, 78);
+    background-image: url('https://images.pexels.com/photos/1131458/pexels-photo-1131458.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260');
+    /*先給你想要放在背景的圖片路徑或網址*/
+    background-repeat: no-repeat;
+    /*背景圖片不要重覆顯示（僅顯示一次）*/
+    background-attachment: fixed;
+    /*背景圖片位置固定*/
+    background-position: center;
+    /*背景圖片水平位置與垂直位置均置中對齊*/
+}
+
 
 /**/
+
 .sidenav-container {
-  height: 100%;
+    height: 100%;
 }
 
-/*右下選單版面*/
+
+/*下選單版面*/
+
 .sidenav {
-  padding-top: 30px;
-  width: 200px;
-  position: fixed;
-  top: 60px;
-  left: 0;
-  background-color: #E0E0E0;
+    /* padding-top: 30px; */
+    width: 150px;
+    position: fixed;
+    /*選單固定不會上下滑動*/
+    top: 60px;
+    /* left: 0; */
+    background-color: #E0E0E0;
+    border-radius: 0 0 20px 0;
+    height: 250px;
 }
-/*右邊的sidenav*/
-.sidenavRight {
-  width: 250px;
-  position: fixed;
-  top: 64px;
-}
-/*標頭toolbar*/
-.header-toolbar {
-  height: 60px;
-  padding: 0 16px 0 0;
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-  z-index: 10;
-  background-color: #04AA6D
 
+
+/*右邊的sidenav*/
+
+.sidenavRight {
+    top: 60px;
+    width: 250px;
+    position: fixed;
+    top: 60px;
+    height: 200px;
+    border-radius: 0 0 0 20px;
+    background-color: #E0E0E0;
 }
+
+
+/*標頭toolbar*/
+
+.header-toolbar {
+    height: 60px;
+    padding: 0 16px 0 0;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 10;
+    background-color: #04AA6D
+}
+
+
 /*選單toolbar*/
+
 .menu-toolbar {
-  position: sticky;
-  top: 0;
-  z-index: 2;
+    position: sticky;
+    top: 0;
+    z-index: 2;
 }
+
+
+/*因為固定了最上面的toolbar，所以讓contonet內容往下移*/
 
 .mat-drawer-content.mat-sidenav-content {
-  margin-top: 100px /*因為固定了最上面的toolbar，所以讓contonet內容往下移*/
-
+    margin-top: 100%
 }
+
 
 /*分隔toolbar內的空間*/
+
 .toolbar-seprator {
-  flex: 1 1 auto;
-
+    flex: 1 1 auto;
 }
+
+
 /*list底線*/
+
 .l-sub-section {
-  color: #333;
-  background-color: #e2effb;
-  padding: 3px;
-  margin-bottom: 8px;
-  display: table;
-  clear: both;
-  width: 100%;
-  box-sizing: border-box;
+    color: #333;
+    /* background-color: #1269bb; */
+    display: table;
+    clear: both;
+    display: flex;
 }
+
+
 /*左選單按鈕*/
-.leftMenuClass{
-  margin-left: 15px;
+
+.leftMenuClass {
+    /* margin-left: 15px; */
 }
 
-.mat-sidenav-containerClass{
-  padding-top: 100px;
+.mat-sidenav-containerClass {
+    padding-top: 100px;
 }
 
-.rightButtonClass{
-margin-left: 10px;
+.rightButtonClass {
+    margin-left: 10px;
 }
 
-.mat-listClass{
-  align-content: center;
+.mat-listClass {
+    align-content: center;
 }
 
-.mat-iconClass{
-  background-color: #04AA6D;
+.mat-iconClass {
+    /* background-color: #04AA6D; */
+}
+
+.imgClass {
+    border-radius: 20px 20px 20px 20px;
+    /* margin-left: 50px; */
+}
+
+.memberData {
+    /* background-color: #b30101; */
+    width: 100%;
+    /* padding-left: 85px; */
+    padding-left: 33%;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+
+/* .l-sub-section{
+    background-color: aqua; */
+
+
+/* } */
+
+.noClass {
+    display: flex;
+    width: 100%;
+    /* background-color: aquamarine; */
+    justify-content: center;
+    position: absolute;
+    /*絕對定位點*/
+}
+
+.mat-iconC {
+    margin-left: 30px;
+    position: relative;
+    /*相對定位點*/
+}
+
+.vipDataList {
+    align-content: center;
+    /* background-color: antiquewhite; */
+}
+
+.spaceClass {
+    height: 20px;
+}
+
+.mat-nav-listClass {
+    /* background-color: aqua; */
+    display: flex;
+    align-items: center;
+    flex-direction: column
+}
+
+.aFontClass {
+    font-size: large;
+    font-weight: 600;
+    /* background-color: #04AA6D; */
+}
+
+.mat-sidenavClass {
+    background-color: #04AA6D;
 }

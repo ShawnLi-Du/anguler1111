@@ -12,6 +12,7 @@ export class HttpService {
   private urlEmailVerify = 'http://localhost:7070/emailVerify'; //email驗證
   private urlCreateMember = 'http://localhost:7070/createMember'; //註冊
   private urlMemberProfile = 'http://localhost:7070/memberProfile'; //抓取會員資料
+  apiService: any;
 
   constructor(private http: HttpClient) { }
 
@@ -31,7 +32,7 @@ export class HttpService {
   }
 
   //註冊
-  doRegister(email: String, password: String) {
+  doRegister(imgData: any, name: String, email: String, password: String) {
 
     let headers = new HttpHeaders({
       'Content-Type': 'application/json',
@@ -41,6 +42,8 @@ export class HttpService {
       headers
     };
     let params = {
+      'img': imgData,
+      'name': name,
       'email': email,
       'password': password
     };
@@ -80,7 +83,7 @@ export class HttpService {
     return this.http.post<any>(this.urlFindPassword, params, options);
   }
   // 抓取會員資料
-  getMemberProfile(no: number){
+  getMemberProfile(no: number) {
 
     let headers = new HttpHeaders({
       'Content-Type': 'application/json',

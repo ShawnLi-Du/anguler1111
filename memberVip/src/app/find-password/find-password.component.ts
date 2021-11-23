@@ -27,7 +27,7 @@ export class FindPasswordComponent implements OnInit {
           window.location.assign('/login');
           alert('重製成功');
         }
-       });
+      });
 
   }
 

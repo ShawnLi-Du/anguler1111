@@ -92,4 +92,28 @@ span.psw {
 
 b.bClass {
   font-size: 20px;
+
+}
+
+input.inputImpClass {
+  margin: 0 0 20px 20px;
+}
+
+.aClass{
+  color: red;
+}
+
+.aClassOK{
+  color: #04AA6D;
+}
+
+.titleClass{
+  font-size: 50px;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  font-weight: 600;
+}
+
+.imgClass{
+border-radius: 20px 20px 20px 20px;
 }
